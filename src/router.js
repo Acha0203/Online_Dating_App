@@ -1,20 +1,32 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '@/pages/Home.vue';
 import UserList from '@/pages/UserList.vue';
+import UserDetail from '@/pages/UserDetail.vue';
+import Chat from '@/pages/Chat.vue';
+import MessageList from '@/pages/MessageList.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home,
-  },
-  {
-    path: '/userlist',
     name: 'userlist',
     component: UserList,
+  },
+  {
+    path: '/user/:id',
+    name: 'userdetail',
+    component: UserDetail,
+  },
+  {
+    path: '/user/id/chat',
+    name: 'chat',
+    component: Chat,
+  },
+  {
+    path: '/message-list',
+    name: 'messagelist',
+    component: MessageList,
   },
 ];
 

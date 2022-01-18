@@ -7,9 +7,9 @@ const state = {
 
 const getters = {
   allUsers: (state) => state.users,
-  getUserById: (state, id) => {
-    return state.users.filter(user => user.id);
-  }
+  getUserById: (state) => (uuid) => {
+    return state.users[uuid];
+  },
 };
 
 const actions = {
@@ -25,6 +25,7 @@ const actions = {
       user.lastName = response.data.results[0].name.last;
       user.gender = response.data.results[0].gender;
       user.age = response.data.results[0].dob.age;
+      user.country = response.data.results[0].location.country;
       user.state = response.data.results[0].location.state;
       user.city = response.data.results[0].location.city;
       user.email = response.data.results[0].email;
@@ -32,7 +33,6 @@ const actions = {
 
       users[key] = user;
     }
-    console.log(users);
     this.commit('setIsLoading', false);
     commit('setUsers', users);
   },

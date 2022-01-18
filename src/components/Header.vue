@@ -14,18 +14,18 @@
           <router-link to="/">
             <v-list-item>
               <v-list-item-icon>
-                <v-icon>mdi-home</v-icon>
+                <v-icon>mdi-account-group</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>Home</v-list-item-title>
+              <v-list-item-title>User List</v-list-item-title>
             </v-list-item>
           </router-link>
 
-          <router-link to="/userlist">
+          <router-link to="/message-list">
             <v-list-item>
               <v-list-item-icon>
-                <v-icon>mdi-account</v-icon>
+                <v-icon>mdi-chat-processing</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>User List</v-list-item-title>
+              <v-list-item-title>Message List</v-list-item-title>
             </v-list-item>
           </router-link>
         </v-list-item-group>

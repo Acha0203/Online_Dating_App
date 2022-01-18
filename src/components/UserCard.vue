@@ -5,12 +5,16 @@
         <img class="photo" :src="`${value.imgUrl}`" />
         <h2 class="montserrat">{{ value.firstName }} {{ value.lastName }}</h2>
         <h3 class="montserrat">Age: {{ value.age }}</h3>
-        <h3 class="montserrat">State: {{ value.state }}</h3>
+        <h3 class="montserrat">
+          <v-icon> mdi-map-marker </v-icon> {{ value.country }}
+        </h3>
 
         <div class="btns">
-          <v-btn color="indigo lighten-1" class="ma-2 white--text">
-            Profile
-          </v-btn>
+          <router-link :to="`/user/${key}`">
+            <v-btn color="indigo lighten-1" class="ma-2 white--text">
+              Profile
+            </v-btn>
+          </router-link>
           <v-btn color="indigo lighten-1" class="ma-2 white--text">
             Talk
             <v-icon right dark> mdi-chat-processing </v-icon>
@@ -26,7 +30,10 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'UserCards',
-  computed: mapGetters(['allUsers']),
+  computed: {
+    ...mapGetters(['allUsers']),
+  },
+
   methods: {
     ...mapActions(['fetchUsers']),
   },
