@@ -59,7 +59,7 @@ export default {
 .user-card {
   width: 300px;
   height: 480px;
-  background: linear-gradient(#4f5691, #aeb3eb);
+  background: linear-gradient(#515aac, #ced0ee);
   filter: drop-shadow(0.4rem 0.4rem 0.4rem #2a295c);
   display: flex;
   flex-direction: column;

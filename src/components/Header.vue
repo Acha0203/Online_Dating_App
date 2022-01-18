@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar app color="indigo lighten-2" elevation="4" dark>
+    <v-app-bar app color="indigo lighten-1" elevation="4" dark>
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <v-toolbar-title>Online Dating App</v-toolbar-title>
     </v-app-bar>

@@ -7,12 +7,16 @@ const state = {
 
 const getters = {
   allUsers: (state) => state.users,
+  getUserById: (state, id) => {
+    return state.users.filter(user => user.id);
+  }
 };
 
 const actions = {
   fetchUsers: async function ({ commit }) {
+    this.commit('setIsLoading', true);
     let users = {};
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 30; i++) {
       const response = await axios.get('https://randomuser.me/api/');
       let key = response.data.results[0].login.uuid;
       let user = new User();
@@ -29,6 +33,7 @@ const actions = {
       users[key] = user;
     }
     console.log(users);
+    this.commit('setIsLoading', false);
     commit('setUsers', users);
   },
 };
