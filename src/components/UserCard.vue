@@ -16,8 +16,7 @@
             </v-btn>
           </router-link>
           <v-btn color="indigo lighten-1" class="ma-2 white--text">
-            Talk
-            <v-icon right dark> mdi-chat-processing </v-icon>
+            Message
           </v-btn>
         </div>
       </div>

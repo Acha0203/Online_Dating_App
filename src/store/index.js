@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    isLoading: true,
+    isLoading: false,
   },
   actions: {
     setIsLoading: function (context, payload) {

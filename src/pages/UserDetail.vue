@@ -2,8 +2,8 @@
   <div class="bg-gradient">
     <img class="photo" :src="`${getUserById(id).imgUrl}`" />
 
-    <div class="text-center">
-      <h2 class="montserrat">
+    <div class="text-center mb-5">
+      <h2 class="montserrat mb-2">
         {{ getUserById(id).firstName }} {{ getUserById(id).lastName }}
       </h2>
       <div class="d-flex">
@@ -13,10 +13,6 @@
         </h3>
       </div>
     </div>
-    <v-btn color="indigo lighten-1" class="ma-4 white--text">
-      Talk
-      <v-icon right dark> mdi-chat-processing </v-icon>
-    </v-btn>
     <div class="list">
       <div class="text-left">
         <h3 class="montserrat">Gender</h3>
@@ -56,6 +52,12 @@
       <div class="text-right">
         <h3 class="montserrat">{{ getUserById(id).city }}</h3>
       </div>
+    </div>
+    <div class="d-flex">
+      <router-link to="/">
+        <v-btn color="indigo lighten-1" class="ma-4 white--text"> Back </v-btn>
+      </router-link>
+      <v-btn color="indigo lighten-1" class="ma-4 white--text"> Message </v-btn>
     </div>
   </div>
 </template>
