@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient">
+  <div class="container">
     <Loading v-if="isLoading" />
     <UserCard />
   </div>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-.bg-gradient {
+.container {
   height: 100vh;
   width: 100vw;
   display: flex;

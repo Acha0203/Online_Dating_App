@@ -15,9 +15,11 @@
               Profile
             </v-btn>
           </router-link>
-          <v-btn color="indigo lighten-1" class="ma-2 white--text">
-            Message
-          </v-btn>
+          <router-link :to="`/user/${key}/chat`">
+            <v-btn color="indigo lighten-1" class="ma-2 white--text">
+              Message
+            </v-btn>
+          </router-link>
         </div>
       </div>
     </div>
@@ -32,7 +34,6 @@ export default {
   computed: {
     ...mapGetters(['allUsers']),
   },
-
   methods: {
     ...mapActions(['fetchUsers']),
   },

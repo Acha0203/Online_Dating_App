@@ -19,7 +19,7 @@ const routes = [
     component: UserDetail,
   },
   {
-    path: '/user/id/chat',
+    path: '/user/:id/chat',
     name: 'chat',
     component: Chat,
   },

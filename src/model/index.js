@@ -21,3 +21,19 @@ export class User {
     this.imgUrl = imgUrl;
   }
 }
+
+export class Chat {
+  constructor(myMessage, reply, timeOfMyMessage, timeOfReply) {
+    this.myMessage = myMessage;
+    this.reply = reply;
+    this.timeOfMyMessage = timeOfMyMessage;
+    this.timeOfReply = timeOfReply;
+  }
+}
+
+export class Message {
+  constructor(id, chatList) {
+    this.id = id;
+    this.chatList = chatList;
+  }
+}

@@ -53,11 +53,17 @@
         <h3 class="montserrat">{{ getUserById(id).city }}</h3>
       </div>
     </div>
-    <div class="d-flex">
+    <div class="btn-container">
       <router-link to="/">
-        <v-btn color="indigo lighten-1" class="ma-4 white--text"> Back </v-btn>
+        <v-btn color="indigo lighten-1" class="ma-4 white--text"
+          ><v-icon>mdi-arrow-u-left-bottom-bold</v-icon> Back
+        </v-btn>
       </router-link>
-      <v-btn color="indigo lighten-1" class="ma-4 white--text"> Message </v-btn>
+      <router-link :to="`/user/${id}/chat`">
+        <v-btn color="indigo lighten-1" class="ma-2 white--text">
+          Message
+        </v-btn>
+      </router-link>
     </div>
   </div>
 </template>
@@ -128,5 +134,11 @@ h3 {
 
 .text-right {
   text-align: right;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
