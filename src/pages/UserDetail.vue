@@ -1,7 +1,8 @@
 <template>
   <div class="bg-gradient">
-    <img class="photo" :src="`${getUserById(id).imgUrl}`" />
-
+    <v-avatar size="180" class="mb-5">
+      <img :src="`${getUserById(id).imgUrl}`" />
+    </v-avatar>
     <div class="text-center mb-5">
       <h2 class="montserrat dark-purple mb-2">
         {{ getUserById(id).name }}
@@ -96,17 +97,10 @@ h3 {
   background-image: linear-gradient(to bottom, #7a80d6 0%, #fff7eb 100%);
 }
 
-.photo {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  margin: 1rem;
-}
-
 .list {
   display: flex;
-  width: 280px;
-  justify-content: space-around;
+  width: 80%;
+  justify-content: space-between;
   border-top-style: solid;
   border-bottom-style: none;
   border-left-style: none;
@@ -114,6 +108,8 @@ h3 {
   border-color: #2a295c;
   border-width: 1px;
   padding: 0.7rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 .text-left {
