@@ -1,22 +1,27 @@
 <template>
   <div class="container">
-    <div v-for="(value, key, index) in allUsers" :key="index">
+    <div v-for="(user, index) in getAllUsers" :key="index">
       <div class="user-card">
-        <img class="photo" :src="`${value.imgUrl}`" />
-        <h2 class="montserrat">{{ value.firstName }} {{ value.lastName }}</h2>
-        <h3 class="montserrat">Age: {{ value.age }}</h3>
-        <h3 class="montserrat">
-          <v-icon> mdi-map-marker </v-icon> {{ value.country }}
+        <v-avatar size="180" class="mb-5">
+          <img :src="`${user.imgUrl}`" />
+        </v-avatar>
+        <h2 class="montserrat dark-purple pb-1">
+          {{ user.name }}
+        </h2>
+        <h3 class="montserrat dark-purple pb-1">Age: {{ user.age }}</h3>
+        <h3 class="montserrat dark-purple pb-1">
+          <v-icon color="indigo darken-2"> mdi-map-marker </v-icon>
+          {{ user.country }}
         </h3>
 
         <div class="btns">
-          <router-link :to="`/user/${key}`">
-            <v-btn color="indigo lighten-1" class="ma-2 white--text">
+          <router-link :to="`/user/${user.id}`">
+            <v-btn color="indigo lighten-1" class="my-3 mx-2 white--text">
               Profile
             </v-btn>
           </router-link>
-          <router-link :to="`/user/${key}/chat`">
-            <v-btn color="indigo lighten-1" class="ma-2 white--text">
+          <router-link :to="`/user/${user.id}/chat`">
+            <v-btn color="indigo lighten-1" class="my-3 mx-2 white--text">
               Message
             </v-btn>
           </router-link>
@@ -27,12 +32,12 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'UserCards',
   computed: {
-    ...mapGetters(['allUsers']),
+    ...mapGetters(['getAllUsers']),
   },
   methods: {
     ...mapActions(['fetchUsers']),
@@ -44,15 +49,6 @@ export default {
 </script>
 
 <style scoped>
-/* Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
-.montserrat {
-  font-family: 'Montserrat', sans-serif;
-  color: #2a295c;
-  padding-bottom: 1rem;
-}
-
 .container {
   height: 100vh;
   width: 100vw;
@@ -73,13 +69,6 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  margin: 1rem;
-}
-
-.photo {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
   margin: 1rem;
 }
 

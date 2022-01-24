@@ -1,10 +1,13 @@
 <template>
-  <div>
-    <div class="bg-gradient">
-      <AllMessages />
-    </div>
-    <v-footer fixed inset height="70">
+  <div class="bg-gradient">
+    <ChatLog />
+    <v-footer fixed inset height="70" color="white">
       <v-row>
+        <router-link :to="`/`">
+          <v-btn icon class="mt-5 ml-3" color="indigo lighten-1">
+            <v-icon color="indigo lighten-1">mdi-account-group</v-icon>
+          </v-btn>
+        </router-link>
         <v-text-field
           v-model="message"
           label="Message"
@@ -17,12 +20,12 @@
         ></v-text-field>
         <v-btn
           icon
-          class="mt-5"
+          class="mt-5 mx-3"
           color="indigo lighten-1"
-          @click="sendMessage()"
+          @click="sendMessage(getUserById(id))"
           :disabled="!message"
         >
-          <v-icon>mdi-send</v-icon>
+          <v-icon color="indigo lighten-1">mdi-send</v-icon>
         </v-btn>
       </v-row>
     </v-footer>
@@ -30,8 +33,8 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import AllMessages from '../components/AllMessages.vue';
+import { mapGetters } from 'vuex';
+import ChatLog from '../components/ChatLog.vue';
 
 export default {
   name: 'Chat',
@@ -41,7 +44,7 @@ export default {
     };
   },
   components: {
-    AllMessages,
+    ChatLog,
   },
   computed: {
     id() {
@@ -50,35 +53,37 @@ export default {
     ...mapGetters(['getUserById']),
   },
   methods: {
-    sendMessage: function () {
-      this.$store.dispatch('setMessages', {
+    sendMessage: function (user) {
+      if (!user.talked) {
+        this.$store.dispatch('setMessageObj', this.id);
+
+        this.$store.dispatch('setTalkedUser', this.id);
+      }
+
+      this.$store.dispatch('setMessage', {
+        id: this.id,
+        message: this.message,
+      });
+
+      this.$store.dispatch('fetchReply', {
         id: this.id,
         message: this.message,
       });
     },
-    ...mapActions(['setChatList']),
-  },
-  created() {
-    this.setChatList();
   },
 };
 </script>
 
 <style scoped>
-/* Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
-.montserrat {
-  font-family: 'Montserrat', sans-serif;
-  color: #2a295c;
-}
-
 .bg-gradient {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
+  min-height: 5000px;
+  background-image: linear-gradient(#7a80d6, #fff7eb);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: repeat-y;
+  background-position: center;
   display: flex;
   flex-direction: column;
-
-  background-image: linear-gradient(to bottom, #7a80d6 0%, #fff7eb 100%);
 }
 </style>

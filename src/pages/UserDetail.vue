@@ -3,54 +3,54 @@
     <img class="photo" :src="`${getUserById(id).imgUrl}`" />
 
     <div class="text-center mb-5">
-      <h2 class="montserrat mb-2">
-        {{ getUserById(id).firstName }} {{ getUserById(id).lastName }}
+      <h2 class="montserrat dark-purple mb-2">
+        {{ getUserById(id).name }}
       </h2>
       <div class="d-flex">
         <v-icon color="indigo lighten-1"> mdi-email </v-icon>
-        <h3 class="montserrat font-small">
+        <h3 class="montserrat dark-purple font-small">
           {{ getUserById(id).email }}
         </h3>
       </div>
     </div>
     <div class="list">
       <div class="text-left">
-        <h3 class="montserrat">Gender</h3>
+        <h3 class="montserrat dark-purple">Gender</h3>
       </div>
       <div class="text-right">
-        <h3 class="montserrat">{{ getUserById(id).gender }}</h3>
+        <h3 class="montserrat dark-purple">{{ getUserById(id).gender }}</h3>
       </div>
     </div>
     <div class="list">
       <div class="text-left">
-        <h3 class="montserrat">Age</h3>
+        <h3 class="montserrat dark-purple">Age</h3>
       </div>
       <div class="text-right">
-        <h3 class="montserrat">{{ getUserById(id).age }}</h3>
+        <h3 class="montserrat dark-purple">{{ getUserById(id).age }}</h3>
       </div>
     </div>
     <div class="list">
       <div class="text-left">
-        <h3 class="montserrat">Country</h3>
+        <h3 class="montserrat dark-purple">Country</h3>
       </div>
       <div class="text-right">
-        <h3 class="montserrat">{{ getUserById(id).country }}</h3>
+        <h3 class="montserrat dark-purple">{{ getUserById(id).country }}</h3>
       </div>
     </div>
     <div class="list">
       <div class="text-left">
-        <h3 class="montserrat">State</h3>
+        <h3 class="montserrat dark-purple">State</h3>
       </div>
       <div class="text-right">
-        <h3 class="montserrat">{{ getUserById(id).state }}</h3>
+        <h3 class="montserrat dark-purple">{{ getUserById(id).state }}</h3>
       </div>
     </div>
     <div class="list">
       <div class="text-left">
-        <h3 class="montserrat">City</h3>
+        <h3 class="montserrat dark-purple">City</h3>
       </div>
       <div class="text-right">
-        <h3 class="montserrat">{{ getUserById(id).city }}</h3>
+        <h3 class="montserrat dark-purple">{{ getUserById(id).city }}</h3>
       </div>
     </div>
     <div class="btn-container">
@@ -83,18 +83,6 @@ export default {
 </script>
 
 <style scoped>
-/* Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-
-.montserrat {
-  font-family: 'Montserrat', sans-serif;
-  color: #2a295c;
-}
-
-.font-small {
-  font-size: 1rem;
-}
-
 h3 {
   font-size: 1rem;
 }

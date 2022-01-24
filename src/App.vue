@@ -18,6 +18,9 @@ export default {
   data: () => ({
     //
   }),
+  created() {
+    require('dotenv').config();
+  },
 };
 </script>
 

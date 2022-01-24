@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import users from './users';
-import messages from './messages';
+import users from './modules/users';
+import messages from './modules/messages';
 
 Vue.use(Vuex);
 
@@ -10,8 +10,8 @@ export default new Vuex.Store({
     isLoading: false,
   },
   actions: {
-    setIsLoading: function (context, payload) {
-      context.commit('setIsLoading', payload);
+    setIsLoading: function ({ commit }, payload) {
+      commit('setIsLoading', payload);
     },
   },
   mutations: {

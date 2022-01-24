@@ -1,0 +1,18 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dark-purple {
+  color: #2a295c;
+}
+
+a {
+  text-decoration: none;
+}
+
+.font-small {
+  font-size: 1rem;
+}
