@@ -9,7 +9,7 @@
             small
             class="mt-6 mx-3"
             color="indigo lighten-1"
-            v-if="!$vuetify.breakpoint.mobile"
+            v-if="!$vuetify.breakpoint.xs"
           >
             <v-icon color="indigo lighten-1">mdi-account-group</v-icon>
           </v-btn>
@@ -20,7 +20,7 @@
           label="Message"
           color="indigo lighten-1"
           class="montserrat mt-5 ml-3"
-          v-on:keydown.enter="sendMessage(getUserById(id))"
+          @keydown.enter="onKeydownEnter($event.keyCode, getUserById(id))"
           clearable
           outlined
           rounded
@@ -63,6 +63,10 @@ export default {
     ...mapGetters(['getUserById']),
   },
   methods: {
+    onKeydownEnter: function (keyCode, user) {
+      if (keyCode !== 13) return;
+      this.sendMessage(user);
+    },
     sendMessage: function (user) {
       if (!user.talked) {
         this.$store.dispatch('setMessageObj', this.id);
