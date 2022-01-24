@@ -14,7 +14,7 @@ const getters = {
 
 const actions = {
   fetchUsers: async function ({ commit }) {
-    if (state.usersAreEmply === true) {
+    if (state.usersAreEmply) {
       this.commit('setIsLoading', true);
       let users = [];
       for (let i = 0; i < 30; i++) {

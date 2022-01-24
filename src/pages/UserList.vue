@@ -8,7 +8,7 @@
 <script>
 import UserCard from '@/components/UserCard.vue';
 import Loading from '@/components/Loading.vue';
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'UserList',
@@ -18,6 +18,12 @@ export default {
   },
   computed: {
     ...mapState(['isLoading']),
+  },
+  methods: {
+    ...mapActions(['fetchUsers']),
+  },
+  created: function () {
+    this.$store.dispatch('fetchUsers');
   },
 };
 </script>
