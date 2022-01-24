@@ -39,12 +39,7 @@ export default {
   computed: {
     ...mapGetters(['getAllUsers']),
   },
-  methods: {
-    ...mapActions(['fetchUsers']),
-  },
-  created() {
-    this.fetchUsers();
-  },
+  methods: {},
 };
 </script>
 

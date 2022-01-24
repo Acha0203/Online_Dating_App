@@ -23,7 +23,7 @@ export default {
     ...mapActions(['fetchUsers']),
   },
   created: function () {
-    this.$store.dispatch('fetchUsers');
+    this.fetchUsers();
   },
 };
 </script>
