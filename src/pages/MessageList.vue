@@ -3,15 +3,15 @@
     <v-col cols="12">
       <div v-for="(message, index) in getMessages" :key="index">
         <router-link :to="`/user/${message.id}/chat`">
-          <v-card class="ma-4 px-3">
+          <v-card class="ma-2 mx-md-4 px-1 px-md-3">
             <v-card-text>
               <v-row align="center">
-                <v-col cols="3">
+                <v-col cols="4" sm="3">
                   <v-avatar size="70" class="mr-4">
                     <img :src="`${getUserById(message.id).imgUrl}`" />
                   </v-avatar>
                 </v-col>
-                <v-col cols="6">
+                <v-col cols="8" sm="6">
                   <p class="title montserrat dark-purple">
                     {{ getUserById(message.id).name }}
                   </p>
@@ -19,9 +19,10 @@
                     {{ getLastChat(message.id).message }}
                   </p>
                 </v-col>
-                <v-col cols="3">
+                <v-col cols="8" sm="3">
                   <p class="body-2 montserrat dark-purple text-right">
-                    {{ getLastChat(message.id).date }} <br />
+                    {{ getLastChat(message.id).date }}
+                    <br v-if="!$vuetify.breakpoint.mobile" />
                     {{ getLastChat(message.id).timeStamp }}
                   </p>
                 </v-col>
@@ -48,8 +49,8 @@ export default {
 
 <style scoped>
 .bg-gradient {
-  height: 100vh;
-  min-width: 100vw;
+  width: 100%;
+  min-height: 5000px;
   background-image: linear-gradient(#7a80d6, #fff7eb);
   background-size: cover;
   background-attachment: fixed;

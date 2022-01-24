@@ -1,6 +1,7 @@
 <template>
   <div class="bg-gradient">
-    <p class="dark-purple large-font">Wellcome to Online Dating App</p>
+    <p class="dark-purple large-font">Wellcome to</p>
+    <p class="dark-purple large-font">Online Dating App</p>
     <router-link :to="`/user`">
       <v-btn color="indigo lighten-1" class="my-3 mx-2 white--text">
         Show All Users
@@ -20,10 +21,6 @@ export default {
   width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(#7a80d6, #fff7eb);
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: repeat-y;
-  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;

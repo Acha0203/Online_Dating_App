@@ -4,23 +4,33 @@
     <v-footer fixed inset height="70" color="white">
       <v-row>
         <router-link :to="`/user`">
-          <v-btn icon class="mt-5 ml-3" color="indigo lighten-1">
+          <v-btn
+            icon
+            small
+            class="mt-6 mx-3"
+            color="indigo lighten-1"
+            v-if="!$vuetify.breakpoint.mobile"
+          >
             <v-icon color="indigo lighten-1">mdi-account-group</v-icon>
           </v-btn>
         </router-link>
+
         <v-text-field
           v-model="message"
           label="Message"
           color="indigo lighten-1"
           class="montserrat mt-5 ml-3"
+          v-on:keydown.enter="sendMessage(getUserById(id))"
           clearable
           outlined
           rounded
           dense
         ></v-text-field>
+
         <v-btn
           icon
-          class="mt-5 mx-3"
+          small
+          class="mt-6 mx-3"
           color="indigo lighten-1"
           @click="sendMessage(getUserById(id))"
           :disabled="!message"
