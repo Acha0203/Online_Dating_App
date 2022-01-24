@@ -17,7 +17,7 @@
           v-model="group"
           active-class="indigo--text text--lighten-3"
         >
-          <router-link to="/">
+          <router-link to="/user">
             <v-list-item>
               <v-list-item-icon>
                 <v-icon color="indigo lighten-1">mdi-account-group</v-icon>

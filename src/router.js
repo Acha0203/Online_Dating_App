@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import TopPage from '@/pages/TopPage.vue';
 import UserList from '@/pages/UserList.vue';
 import UserDetail from '@/pages/UserDetail.vue';
 import Chat from '@/pages/Chat.vue';
@@ -10,6 +11,11 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
+    name: 'toppage',
+    component: TopPage,
+  },
+  {
+    path: '/user',
     name: 'userlist',
     component: UserList,
   },

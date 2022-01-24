@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="btn-container">
-      <router-link to="/">
+      <router-link to="/user">
         <v-btn color="indigo lighten-1" class="ma-4 white--text"
           ><v-icon>mdi-arrow-u-left-bottom-bold</v-icon> Back
         </v-btn>

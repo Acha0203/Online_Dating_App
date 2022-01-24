@@ -3,7 +3,7 @@
     <ChatLog />
     <v-footer fixed inset height="70" color="white">
       <v-row>
-        <router-link :to="`/`">
+        <router-link :to="`/user`">
           <v-btn icon class="mt-5 ml-3" color="indigo lighten-1">
             <v-icon color="indigo lighten-1">mdi-account-group</v-icon>
           </v-btn>
