@@ -18,8 +18,9 @@ export default {
   data: () => ({
     //
   }),
-  created() {
+  created: function () {
     require('dotenv').config();
+    this.$store.dispatch('fetchUsers');
   },
 };
 </script>
