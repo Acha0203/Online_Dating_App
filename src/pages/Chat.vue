@@ -90,9 +90,9 @@ export default {
 
 <style scoped>
 .bg-gradient {
-  width: 100%;
+  width: 100vw;
   min-height: 5000px;
-  background-image: linear-gradient(#7a80d6, #fff7eb);
+  background-image: linear-gradient(to right, #9aa0f6, #fff7eb);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: repeat-y;

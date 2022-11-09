@@ -17,27 +17,28 @@ const actions = {
     if (state.usersAreEmply) {
       this.commit('setIsLoading', true);
       let users = [];
+      const response = await axios.get('https://randomuser.me/api/?results=30');
+      console.log(response.data);
       for (let i = 0; i < 30; i++) {
-        const response = await axios.get('https://randomuser.me/api/');
-
         let user = {
-          id: response.data.results[0].login.uuid,
+          id: response.data.results[i].login.uuid,
           name:
-            response.data.results[0].name.first +
+            response.data.results[i].name.first +
             ' ' +
-            response.data.results[0].name.last,
-          gender: response.data.results[0].gender,
-          age: response.data.results[0].dob.age,
-          country: response.data.results[0].location.country,
-          state: response.data.results[0].location.state,
-          city: response.data.results[0].location.city,
-          email: response.data.results[0].email,
-          imgUrl: response.data.results[0].picture.large,
+            response.data.results[i].name.last,
+          gender: response.data.results[i].gender,
+          age: response.data.results[i].dob.age,
+          country: response.data.results[i].location.country,
+          state: response.data.results[i].location.state,
+          city: response.data.results[i].location.city,
+          email: response.data.results[i].email,
+          imgUrl: response.data.results[i].picture.large,
           talked: false,
         };
 
         users.push(user);
       }
+
       this.commit('setUsersAreEmpty', false);
       this.commit('setIsLoading', false);
       commit('setUsers', users);
